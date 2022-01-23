@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "511270628547",
+    "project_id": "maison-cf679",
+    "storage_bucket": "maison-cf679.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:511270628547:android:21af3543d4b83ed23ac676",
+        "android_client_info": {
+          "package_name": "com.example.maison"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "511270628547-904kc7ia6oe6c0qhjumt3m7q29dqpt7e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.maison",
+            "certificate_hash": "88a1d0a4386fa3632bd8cd08d7fb4916f0ab8ae6"
+          }
+        },
+        {
+          "client_id": "511270628547-jemb1c061korvpgr8rnekmlt6hb1pbm8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAP8-Q5YJfpgrqORuF2W077d17ZPjVMzlc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "511270628547-jemb1c061korvpgr8rnekmlt6hb1pbm8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

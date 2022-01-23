@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo_degradado"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".CompraDetalle">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Actualizar objeto"
+        android:textColor="@color/Blanco"
+        android:textSize="30sp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Artículo: "
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/etNew"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Pechugas"
+            android:inputType="textCapSentences"
+            android:textIsSelectable="true"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Comprado: "
+            android:textSize="18sp" />
+
+        <CheckBox
+            android:id="@+id/cbCheck"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="15dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cantidad: "
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/btnMenos"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/btn_animado"
+            android:padding="5dp"
+            android:text="-"
+            android:textColor="@color/Blanco" />
+
+        <TextView
+            android:id="@+id/tvCant"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="x1" />
+
+        <Button
+            android:id="@+id/btnMas"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/btn_animado"
+            android:padding="5dp"
+            android:text="+"
+            android:textColor="@color/Blanco" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnCancelar"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="5dp"
+            android:background="@drawable/btn_animado"
+            android:text="Cancelar"
+            android:textColor="@color/Blanco" />
+
+        <Button
+            android:id="@+id/btnModificar"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="5dp"
+            android:background="@drawable/btn_animado"
+            android:text="Modificar"
+            android:textColor="@color/Blanco" />
+
+    </LinearLayout>
+
+</LinearLayout>

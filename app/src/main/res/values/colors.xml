@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="azulFondo">#95d7f9</color>
+    <color name="azulSplash">#9dc8eb</color>
+    <color name="Blanco">#FFFFFF</color>
+    <color name="Negro">#111111</color>
+    <color name="Gris">#616161</color>
+
+
+    <color name="colorTransparente">#00363E6B</color>
+    <color name="colorCuadroOscuroV">#CCBE4319</color>
+    <color name="marronClarito">#FFAB6E</color>
+
+    <color name="colorCuadroOscuro">#95d7f9</color>
+    <color name="verdeClaro">#9ebd45</color>
+    <color name="verdeClaroFuerte">#BF9EBD45</color>
+    <color name="colorBtnround">#FF9800</color>
+    <color name="colorAzulOscuro">#2A44F1</color>
+    <color name="colorAzulNegro">#091044</color>
+    <color name="colorBtnLetraActual">#26B1F0</color>
+    <color name="amarillo">#FFEB3B</color>
+</resources>
