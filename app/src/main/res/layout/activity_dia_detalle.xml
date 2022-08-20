@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo_degradado"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".DiaDetalle">
+    <TextView
+        android:id="@+id/tvDia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="Lunes"
+        android:textColor="#010"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="155dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Original"
+                android:textColor="#010"
+                android:textSize="18sp" />
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="3dp"
+                android:src="@color/Negro" />
+
+            <TextView
+                android:id="@+id/tvComida"
+                android:layout_width="135dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:gravity="center"
+                android:textColor="#010"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="2dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="3dp"
+                android:src="@color/colorAzulOscuro" />
+
+            <TextView
+                android:id="@+id/tvCena"
+                android:layout_width="135dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:gravity="center"
+                android:hint=""
+                android:textColor="#010"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="180dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Nuevo"
+                android:textColor="#010"
+                android:textSize="18sp" />
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="3dp"
+                android:src="@color/Negro" />
+
+            <LinearLayout
+                android:layout_width="170dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="10dp"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/etComida"
+                    android:layout_width="135dp"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:gravity="center"
+                    android:hint="Pechugas de pollo"
+                    android:inputType="textCapSentences"
+                    android:textColor="@color/Negro"
+                    android:textColorHint="@color/Gris"
+                    android:textSize="15sp" />
+
+                <Button
+                    android:id="@+id/btnEtComida"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/btn_animado"
+                    android:text="+"
+                    android:textColor="@color/Blanco" />
+            </LinearLayout>
+
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="2dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="3dp"
+                android:src="@color/colorAzulOscuro" />
+
+            <LinearLayout
+                android:layout_width="170dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="10dp"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/etCena"
+                    android:layout_width="135dp"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:gravity="center"
+                    android:hint="Revuelto de gulas"
+                    android:inputType="textCapSentences"
+                    android:textColor="@color/Negro"
+                    android:textColorHint="@color/Gris"
+                    android:textSize="15sp" />
+
+                <Button
+                    android:id="@+id/btnEtCena"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/btn_animado"
+                    android:text="+"
+                    android:textColor="@color/Blanco" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnSubeCambio"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/btn_animado"
+        android:text="Guardar"
+        android:textColor="@color/Blanco" />
+
+</LinearLayout>

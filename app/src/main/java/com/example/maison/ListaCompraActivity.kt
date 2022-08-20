@@ -9,10 +9,9 @@ import android.widget.CheckBox
 import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
-import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.maison.Objetos.Compra
+import com.example.maison.objeto.Compra
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -22,12 +21,18 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
 import kotlinx.coroutines.withContext
-import java.util.*
 import kotlin.collections.ArrayList
+import kotlin.system.exitProcess
 
 class ListaCompraActivity : AppCompatActivity() {
 
     var listaAll = mutableListOf<Compra>()
+    var listaDeleted = mutableListOf<Compra>()
+    var listaDeletedAll = mutableListOf<Compra>()
+    var deletedAll = false
+    var listaDeletedSelected = mutableListOf<Compra>()
+    var deletedSelected = false
+
 
     lateinit var mRecyclerView2: RecyclerView
     val mAdapter2: ComprasAdapder = ComprasAdapder() {
@@ -145,7 +150,7 @@ class ListaCompraActivity : AppCompatActivity() {
     inner class ComprasAdapder(var onClick: (compra: Compra) -> Unit) :
         RecyclerView.Adapter<ComprasAdapder.ViewHolder>() {
 
-        var lista: List<Compra> = ArrayList()
+        var lista: List<Compra> = java.util.ArrayList()
         lateinit var context: Context
         private val ComprasRef = Firebase.firestore.collection("Compras")
         var pos = 0
@@ -173,7 +178,8 @@ class ListaCompraActivity : AppCompatActivity() {
                     //notifyItemRangeChanged(lista.indexOf(item),lista.size)
                     bajaCompra()
 
-                    Snackbar.make(
+                    listaDeleted.add(0,item)
+                    /*Snackbar.make(
                         mRecyclerView2,
                         "${item.compra} eliminado",
                         Snackbar.LENGTH_LONG
@@ -182,7 +188,7 @@ class ListaCompraActivity : AppCompatActivity() {
                         subeCompra(item)
                         //setUpRecyclerView(listaAll)
                         bajaCompra()
-                    }).show()
+                    }).show()*/
 
                 }
                 itemView.setOnClickListener {
@@ -218,28 +224,92 @@ class ListaCompraActivity : AppCompatActivity() {
         menuInflater.inflate(R.menu.menu_compra_layout, menu)
         val item: MenuItem = menu!!.findItem(R.id.nav_deleteAll)
         val navDeleteAll = menu.findItem(R.id.nav_deleteAll)
+        val navDeleteSelected = menu.findItem(R.id.nav_deleteSelected)
+        val navUndo = menu.findItem(R.id.nav_undo)
 
+        navUndo.setOnMenuItemClickListener {
+            var accion = false
+            if (listaDeleted.size > 0 && !deletedAll && !deletedSelected) {
+                listaAll.add(listaDeleted[0])
+                subeCompra(listaDeleted[0])
+                listaDeleted.removeAt(0)
+                //setUpRecyclerView(listaAll)
+                bajaCompra()
+            }
+            if (deletedAll) {
+                listaAll.addAll(listaDeletedAll)
+                for (i in 0 until listaDeletedAll.size){
+                    subeCompra(listaDeletedAll[i])
+                }
+                listaDeletedAll.clear()
+                //setUpRecyclerView(listaAll)
+                bajaCompra()
+                deletedAll = false
+                accion = true
+            }
+            if (deletedSelected && !accion) {
+                listaAll.addAll(listaDeletedSelected)
+                for (i in 0 until listaDeletedSelected.size){
+                    subeCompra(listaDeletedSelected[i])
+                }
+                listaDeletedSelected.clear()
+                //setUpRecyclerView(listaAll)
+                bajaCompra()
+                deletedSelected = false
+            }
+            true
+        }
         navDeleteAll.setOnMenuItemClickListener {
             val listaBorrados = mutableListOf<Compra>()
             listaBorrados.addAll(listaAll)
+            listaDeletedAll.addAll(listaAll)
+            deletedAll = true
             listaAll.clear()
-            for (i in 0 until listaBorrados.size){
+            for (i in 0 until listaBorrados.size) {
                 comprasRef.document(listaBorrados[i].compra).delete()
             }
             bajaCompra()
-            Snackbar.make(
+            /*Snackbar.make(
                 mRecyclerView2,
                 "Lista eliminada",
                 Snackbar.LENGTH_LONG
             ).setAction("Deshacer", View.OnClickListener {
                 listaAll.addAll(listaBorrados)
-                for (i in 0 until listaAll.size){
+                for (i in 0 until listaAll.size) {
                     subeCompra(listaAll[i])
                 }
                 bajaCompra()
-            }).show()
+            }).show()*/
             true
         }
+        navDeleteSelected.setOnMenuItemClickListener {
+            val listaBorrados = mutableListOf<Compra>()
+            for (i in 0 until listaAll.size) {
+                if (listaAll[i].check) {
+                    listaBorrados.add(listaAll[i])
+                }
+            }
+            listaDeletedSelected.addAll(listaBorrados)
+            deletedSelected = true
+            listaAll.clear()
+            for (i in 0 until listaBorrados.size) {
+                comprasRef.document(listaBorrados[i].compra).delete()
+            }
+            bajaCompra()
+            /*Snackbar.make(
+                mRecyclerView2,
+                "Selección eliminada",
+                Snackbar.LENGTH_LONG
+            ).setAction("Deshacer", View.OnClickListener {
+                listaAll.addAll(listaBorrados)
+                for (i in 0 until listaAll.size) {
+                    subeCompra(listaAll[i])
+                }
+                bajaCompra()
+            }).show()*/
+            true
+        }
+
         return super.onCreateOptionsMenu(menu)
     }
 

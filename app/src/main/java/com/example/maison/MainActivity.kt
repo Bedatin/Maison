@@ -3,7 +3,6 @@ package com.example.maison
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -18,19 +17,9 @@ class MainActivity : AppCompatActivity() {
         }
 
         btnCalendario.setOnClickListener {
-            Toast.makeText(
-                this,
-                "Sin autorización",
-                Toast.LENGTH_SHORT
-            ).show()
+            val intent = Intent(this, CalendarioComidasActivity::class.java)
+            startActivity(intent)
         }
 
-        btnComida.setOnClickListener {
-            Toast.makeText(
-                this,
-                "Sin autorización",
-                Toast.LENGTH_SHORT
-            ).show()
-        }
     }
 }

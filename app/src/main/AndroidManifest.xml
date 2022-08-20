@@ -16,7 +16,9 @@
         android:roundIcon="@mipmap/ic_aplication_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CompraDetalle"></activity>
+        <activity android:name=".DiaDetalle"></activity>
+        <activity android:name=".CalendarioComidasActivity" />
+        <activity android:name=".CompraDetalle" />
         <activity android:name=".ListaCompraActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

@@ -28,14 +28,5 @@
         android:text="Calendario"
         android:textColor="@color/Blanco"
         android:textStyle="bold" />
-    <Button
-        android:id="@+id/btnComida"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_margin="10dp"
-        android:background="@drawable/btn_animado"
-        android:text="Comida"
-        android:textColor="@color/Blanco"
-        android:textStyle="bold" />
 
 </LinearLayout>

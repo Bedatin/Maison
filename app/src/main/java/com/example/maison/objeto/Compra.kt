@@ -1,4 +1,4 @@
-package com.example.maison.Objetos
+package com.example.maison.objeto
 
 import java.io.Serializable
 
