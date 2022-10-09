@@ -20,6 +20,10 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, CalendarioComidasActivity::class.java)
             startActivity(intent)
         }
+        btnCalendario2.setOnClickListener {
+            val intent = Intent(this, CalendarioInSite::class.java)
+            startActivity(intent)
+        }
 
     }
 }

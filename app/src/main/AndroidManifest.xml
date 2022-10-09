@@ -16,7 +16,8 @@
         android:roundIcon="@mipmap/ic_aplication_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DiaDetalle"></activity>
+        <activity android:name=".CalendarioInSite"></activity>
+        <activity android:name=".DiaDetalle" />
         <activity android:name=".CalendarioComidasActivity" />
         <activity android:name=".CompraDetalle" />
         <activity android:name=".ListaCompraActivity" />

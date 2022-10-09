@@ -87,8 +87,6 @@ class CalendarioComidasActivity : AppCompatActivity() {
     fun recicla() {
         setUpRecyclerView(semana0, rvSem1)
         setUpRecyclerView(semana1, rvSem2)
-        setUpRecyclerView(semana2, rvSem3)
-        setUpRecyclerView(semana3, rvSem4)
     }
 
     fun bajaCalendario() = CoroutineScope(Dispatchers.IO).launch {
@@ -98,7 +96,7 @@ class CalendarioComidasActivity : AppCompatActivity() {
                 lunes = LocalDate.now().minusDays(i.toLong())
             }
         }
-        for (i in 0..27) {
+        for (i in 0..13) {
             try {
                 val doc = lunes.plusDays(i.toLong()).toString()
                 val documento = calendarioRef.document(doc).get().await()
@@ -125,7 +123,7 @@ class CalendarioComidasActivity : AppCompatActivity() {
                             recicla()
                         }
                     }
-                    i in 14..20 -> {
+                    /*i in 14..20 -> {
                         val dia = semana[i-14]
                         val nuevoDia = Dia(doc, dia, comida, cena)
                         diasBajados.add(nuevoDia)
@@ -142,7 +140,7 @@ class CalendarioComidasActivity : AppCompatActivity() {
                         withContext(Dispatchers.Main) {
                             recicla()
                         }
-                    }
+                    }*/
                     else -> {
                         Toast.makeText(
                             this@CalendarioComidasActivity,

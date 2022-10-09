@@ -1,0 +1,834 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@drawable/fondo_degradado"
+    android:orientation="vertical"
+    tools:context=".CalendarioInSite">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:gravity="center_horizontal"
+        android:text="Semana actual"
+        android:textColor="@color/Negro"
+        android:textSize="16sp" />
+
+    <HorizontalScrollView
+        android:id="@+id/HSSem1"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvDia1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Lunes"
+                    android:textColor="#010"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:src="@color/Negro" />
+
+                <EditText
+                    android:id="@+id/etComida1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:enabled="true"
+                    android:singleLine="false"
+                    android:background="@null"
+                    android:text="Ensalada de garbanzos"
+                    android:textColor="#010"
+                    android:textSize="12sp" />
+
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="2dp"
+                    android:src="@color/colorAzulOscuro" />
+
+                <EditText
+                    android:id="@+id/etCena1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:enabled="true"
+                    android:singleLine="false"
+                    android:background="@null"
+                    android:text="Revuelto de gulas"
+                    android:textColor="#010"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvDia2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Lunes"
+                    android:textColor="#010"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:src="@color/Negro" />
+
+                <EditText
+                    android:id="@+id/etComida2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:enabled="true"
+                    android:singleLine="false"
+                    android:background="@null"
+                    android:text="Ensalada de garbanzos"
+                    android:textColor="#010"
+                    android:textSize="12sp" />
+
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="2dp"
+                    android:src="@color/colorAzulOscuro" />
+
+                <EditText
+                    android:id="@+id/etCena2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:enabled="true"
+                    android:singleLine="false"
+                    android:background="@null"
+                    android:text="Revuelto de gulas"
+                    android:textColor="#010"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvDia3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Lunes"
+                    android:textColor="#010"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:src="@color/Negro" />
+
+                <EditText
+                    android:id="@+id/etComida3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:enabled="true"
+                    android:singleLine="false"
+                    android:background="@null"
+                    android:text="Ensalada de garbanzos"
+                    android:textColor="#010"
+                    android:textSize="12sp" />
+
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="2dp"
+                    android:src="@color/colorAzulOscuro" />
+
+                <EditText
+                    android:id="@+id/etCena3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:enabled="true"
+                    android:singleLine="false"
+                    android:background="@null"
+                    android:text="Revuelto de gulas"
+                    android:textColor="#010"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvDia4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Lunes"
+                    android:textColor="#010"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:src="@color/Negro" />
+
+                <EditText
+                    android:id="@+id/etComida4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:enabled="true"
+                    android:singleLine="false"
+                    android:background="@null"
+                    android:text="Ensalada de garbanzos"
+                    android:textColor="#010"
+                    android:textSize="12sp" />
+
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="2dp"
+                    android:src="@color/colorAzulOscuro" />
+
+                <EditText
+                    android:id="@+id/etCena4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:enabled="true"
+                    android:singleLine="false"
+                    android:background="@null"
+                    android:text="Revuelto de gulas"
+                    android:textColor="#010"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvDia5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Lunes"
+                    android:textColor="#010"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:src="@color/Negro" />
+
+                <EditText
+                    android:id="@+id/etComida5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:enabled="true"
+                    android:singleLine="false"
+                    android:background="@null"
+                    android:text="Ensalada de garbanzos"
+                    android:textColor="#010"
+                    android:textSize="12sp" />
+
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="2dp"
+                    android:src="@color/colorAzulOscuro" />
+
+                <EditText
+                    android:id="@+id/etCena5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:enabled="true"
+                    android:singleLine="false"
+                    android:background="@null"
+                    android:text="Revuelto de gulas"
+                    android:textColor="#010"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvDia6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Lunes"
+                    android:textColor="#010"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:src="@color/Negro" />
+
+                <EditText
+                    android:id="@+id/etComida6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:enabled="true"
+                    android:singleLine="false"
+                    android:background="@null"
+                    android:text="Ensalada de garbanzos"
+                    android:textColor="#010"
+                    android:textSize="12sp" />
+
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="2dp"
+                    android:src="@color/colorAzulOscuro" />
+
+                <EditText
+                    android:id="@+id/etCena6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:enabled="true"
+                    android:singleLine="false"
+                    android:background="@null"
+                    android:text="Revuelto de gulas"
+                    android:textColor="#010"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvDia7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Lunes"
+                    android:textColor="#010"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:src="@color/Negro" />
+
+                <EditText
+                    android:id="@+id/etComida7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:enabled="true"
+                    android:singleLine="false"
+                    android:background="@null"
+                    android:text="Ensalada de garbanzos"
+                    android:textColor="#010"
+                    android:textSize="12sp" />
+
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="2dp"
+                    android:src="@color/colorAzulOscuro" />
+
+                <EditText
+                    android:id="@+id/etCena7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:enabled="true"
+                    android:singleLine="false"
+                    android:background="@null"
+                    android:text="Revuelto de gulas"
+                    android:textColor="#010"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </HorizontalScrollView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:gravity="center_horizontal"
+        android:text="Próxima semana"
+        android:textColor="@color/Negro"
+        android:textSize="16sp" />
+
+    <HorizontalScrollView
+        android:id="@+id/HSSem2"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvDia8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Lunes"
+                    android:textColor="#010"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:src="@color/Negro" />
+
+                <EditText
+                    android:id="@+id/etComida8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:enabled="true"
+                    android:singleLine="false"
+                    android:background="@null"
+                    android:text="Ensalada de garbanzos"
+                    android:textColor="#010"
+                    android:textSize="12sp" />
+
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="2dp"
+                    android:src="@color/colorAzulOscuro" />
+
+                <EditText
+                    android:id="@+id/etCena8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:enabled="true"
+                    android:singleLine="false"
+                    android:background="@null"
+                    android:text="Revuelto de gulas"
+                    android:textColor="#010"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvDia9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Lunes"
+                    android:textColor="#010"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:src="@color/Negro" />
+
+                <EditText
+                    android:id="@+id/etComida9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:enabled="true"
+                    android:singleLine="false"
+                    android:background="@null"
+                    android:text="Ensalada de garbanzos"
+                    android:textColor="#010"
+                    android:textSize="12sp" />
+
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="2dp"
+                    android:src="@color/colorAzulOscuro" />
+
+                <EditText
+                    android:id="@+id/etCena9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:enabled="true"
+                    android:singleLine="false"
+                    android:background="@null"
+                    android:text="Revuelto de gulas"
+                    android:textColor="#010"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvDia10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Lunes"
+                    android:textColor="#010"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:src="@color/Negro" />
+
+                <EditText
+                    android:id="@+id/etComida10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:enabled="true"
+                    android:singleLine="false"
+                    android:background="@null"
+                    android:text="Ensalada de garbanzos"
+                    android:textColor="#010"
+                    android:textSize="12sp" />
+
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="2dp"
+                    android:src="@color/colorAzulOscuro" />
+
+                <EditText
+                    android:id="@+id/etCena10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:enabled="true"
+                    android:singleLine="false"
+                    android:background="@null"
+                    android:text="Revuelto de gulas"
+                    android:textColor="#010"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvDia11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Lunes"
+                    android:textColor="#010"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:src="@color/Negro" />
+
+                <EditText
+                    android:id="@+id/etComida11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:enabled="true"
+                    android:singleLine="false"
+                    android:background="@null"
+                    android:text="Ensalada de garbanzos"
+                    android:textColor="#010"
+                    android:textSize="12sp" />
+
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="2dp"
+                    android:src="@color/colorAzulOscuro" />
+
+                <EditText
+                    android:id="@+id/etCena11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:enabled="true"
+                    android:singleLine="false"
+                    android:background="@null"
+                    android:text="Revuelto de gulas"
+                    android:textColor="#010"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvDia12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Lunes"
+                    android:textColor="#010"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:src="@color/Negro" />
+
+                <EditText
+                    android:id="@+id/etComida12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:enabled="true"
+                    android:singleLine="false"
+                    android:background="@null"
+                    android:text="Ensalada de garbanzos"
+                    android:textColor="#010"
+                    android:textSize="12sp" />
+
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="2dp"
+                    android:src="@color/colorAzulOscuro" />
+
+                <EditText
+                    android:id="@+id/etCena12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:enabled="true"
+                    android:singleLine="false"
+                    android:background="@null"
+                    android:text="Revuelto de gulas"
+                    android:textColor="#010"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvDia13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Lunes"
+                    android:textColor="#010"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:src="@color/Negro" />
+
+                <EditText
+                    android:id="@+id/etComida13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:enabled="true"
+                    android:singleLine="false"
+                    android:background="@null"
+                    android:text="Ensalada de garbanzos"
+                    android:textColor="#010"
+                    android:textSize="12sp" />
+
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="2dp"
+                    android:src="@color/colorAzulOscuro" />
+
+                <EditText
+                    android:id="@+id/etCena13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:enabled="true"
+                    android:singleLine="false"
+                    android:background="@null"
+                    android:text="Revuelto de gulas"
+                    android:textColor="#010"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvDia14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Lunes"
+                    android:textColor="#010"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:src="@color/Negro" />
+
+                <EditText
+                    android:id="@+id/etComida14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:enabled="true"
+                    android:singleLine="false"
+                    android:background="@null"
+                    android:text="Ensalada de garbanzos"
+                    android:textColor="#010"
+                    android:textSize="12sp" />
+
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="2dp"
+                    android:src="@color/colorAzulOscuro" />
+
+                <EditText
+                    android:id="@+id/etCena14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:enabled="true"
+                    android:singleLine="false"
+                    android:background="@null"
+                    android:text="Revuelto de gulas"
+                    android:textColor="#010"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </HorizontalScrollView>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <Button
+            android:id="@+id/btnCancelar"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:background="@drawable/btn_animado"
+            android:text="Cancelar"
+            android:textColor="@color/Blanco"
+            android:textStyle="bold"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guidelain"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btnGuardar"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:background="@drawable/btn_animado"
+            android:text="Guardar"
+            android:textColor="@color/Blanco"
+            android:textStyle="bold"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guidelain"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
