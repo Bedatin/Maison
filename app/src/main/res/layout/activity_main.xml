@@ -34,7 +34,7 @@
         android:layout_height="50dp"
         android:layout_margin="10dp"
         android:background="@drawable/btn_animado"
-        android:text="CalendarioIn"
+        android:text="Calendario In Site"
         android:textColor="@color/Blanco"
         android:textStyle="bold" />
 

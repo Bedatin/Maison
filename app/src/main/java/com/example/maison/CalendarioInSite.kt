@@ -30,6 +30,8 @@ class CalendarioInSite : AppCompatActivity() {
 
     private val calendarioRef = Firebase.firestore.collection("Calendario")
 
+    var semanaAMostrar = arrayListOf<String>()
+
     var semana = arrayListOf<String>(
         "L",
         "M",
@@ -60,25 +62,37 @@ class CalendarioInSite : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_calendario_in_site)
+        semanaAMostrar.clear()
         bajaCalendario()
 
         //habilitarBotones()
         llenarArrays()
         btnGuardar.setOnClickListener {
-            for (i in 0..13) {
-                calendarioRef.document(listatvDias[i].text.toString()).set(
+            for (i in 0..6) {
+                calendarioRef.document(semanaAMostrar[i]).set(
                     Dia(
-                        listatvDias[i].text.toString(),
+                        semanaAMostrar[i],
                         semana[i],
                         listaetComidas[i].text.toString(),
                         listaetCenas[i].text.toString()
                     )
                 )
             }
+            for (i in 7..13) {
+                calendarioRef.document(semanaAMostrar[i]).set(
+                    Dia(
+                        semanaAMostrar[i],
+                        semana[i - 7],
+                        listaetComidas[i].text.toString(),
+                        listaetCenas[i].text.toString()
+                    )
+                )
+            }
+
         }
     }
 
-    fun llenarArrays(){
+    fun llenarArrays() {
         listatvDias.add(tvDia1)
         listatvDias.add(tvDia2)
         listatvDias.add(tvDia3)
@@ -130,8 +144,8 @@ class CalendarioInSite : AppCompatActivity() {
 
     }
 
-    fun habilitarBotones(){
-        for (i in 0 until listaetComidas.size){
+    fun habilitarBotones() {
+        for (i in 0 until listaetComidas.size) {
             listaetComidas[i].isEnabled = !listaetComidas[i].isEnabled
             listaetCenas[i].isEnabled = !listaetCenas[i].isEnabled
         }
@@ -146,36 +160,44 @@ class CalendarioInSite : AppCompatActivity() {
         }
         for (i in 0..13) {
             val doc = lunes.plusDays(i.toLong()).toString()
-            lateinit var documento:DocumentSnapshot
-            lateinit var comida:String
-            lateinit var cena:String
+            semanaAMostrar.add(doc)
+            lateinit var documento: DocumentSnapshot
+            lateinit var comida: String
+            lateinit var cena: String
             try {
                 documento = calendarioRef.document(doc).get().await()
                 comida = documento?.get("comida").toString()
                 cena = documento?.get("cena").toString()
-                //val fecha = documento?.get("fecha").toString()
-                //val dia = documento?.get("dia").toString()
-                /*when {
+                val fecha = documento?.get("fecha").toString()
+                val dia = documento?.get("dia").toString()
+                when {
                     i < 7 -> {
-                        val dia = semana[i]
-                        val nuevoDia = Dia(doc, dia, comida, cena)
-                        diasBajados.add(nuevoDia)
-                        semana0.add(nuevoDia)
+                        //val dia = semana[i]
+                        //val nuevoDia = Dia(doc, dia, comida, cena)
+                        //diasBajados.add(nuevoDia)
+                        //semana0.add(nuevoDia)
                         withContext(Dispatchers.Main) {
-                            //recicla()
+                            val num1 = doc.substring(8, 10)
+                            val num2 = doc.substring(5, 7)
+                            //tvDia.text = "${semana[i]} $num1/$num2"
+                            listatvDias[i].text = "${semana[i]} $num1/$num2"
+                            listaetComidas[i].text = comida
+                            listaetCenas[i].text = cena
                         }
                     }
                     i in 7..13 -> {
-                        val dia = semana[i-7]
+                        withContext(Dispatchers.Main) {
+                            val num1 = doc.substring(8, 10)
+                            val num2 = doc.substring(5, 7)
+                            //tvDia.text = "${semana[i-7]} $num1/$num2"
+                            listatvDias[i].text = "${semana[i - 7]} $num1/$num2"
+                            listaetComidas[i].text = comida
+                            listaetCenas[i].text = cena
+                        }
+                        /*val dia = semana[i-7]
                         val nuevoDia = Dia(doc, dia, comida, cena)
                         diasBajados.add(nuevoDia)
-                        semana1.add(nuevoDia)
-                    }
-                    i in 14..20 -> {
-                        val dia = semana[i-14]
-                        val nuevoDia = Dia(doc, dia, comida, cena)
-                        diasBajados.add(nuevoDia)
-                        semana2.add(nuevoDia)
+                        semana1.add(nuevoDia)*/
                     }
                     else -> {
                         Toast.makeText(
@@ -184,17 +206,20 @@ class CalendarioInSite : AppCompatActivity() {
                             Toast.LENGTH_LONG
                         ).show()
                     }
-                }*/
+                }
             } catch (e: Exception) {
                 withContext(Dispatchers.Main) {
                     Toast.makeText(this@CalendarioInSite, e.message, Toast.LENGTH_LONG).show()
                 }
             }
-            withContext(Dispatchers.Main) {
+            /*withContext(Dispatchers.Main) {
+                val num1 = doc.substring(8, 10)
+                val num2 = doc.substring(5, 7)
+                tvDia.text = "${listado.dia} $num1/$num2"
                 listatvDias[i].text = doc
                 listaetComidas[i].text = comida
                 listaetCenas[i].text = cena
-            }
+            }*/
         }
         habilitarBotones()
         calendarioComidaBajado = diasBajados.sortedBy { it.fecha }
