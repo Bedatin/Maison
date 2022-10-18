@@ -21,8 +21,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
 import kotlinx.coroutines.withContext
-import kotlin.collections.ArrayList
-import kotlin.system.exitProcess
 
 class ListaCompraActivity : AppCompatActivity() {
 
@@ -52,12 +50,7 @@ class ListaCompraActivity : AppCompatActivity() {
         setContentView(R.layout.activity_lista_compra)
         var cantNuevoObjeto = 1
 
-        setUpRecyclerView(listaAll)
         bajaCompra()
-
-        /*val adapder = CompraAdapter(listaAll)
-        rvContainer.adapter = adapder
-        rvContainer.layoutManager = LinearLayoutManager(this)*/
 
         btnAdd.setOnClickListener {
             if (etNew.text.toString() == "") {
@@ -116,7 +109,6 @@ class ListaCompraActivity : AppCompatActivity() {
 
     fun subeCompra(compra: Compra) = CoroutineScope(Dispatchers.IO).launch {
         try {
-            //ComprasRef.add(compra).await()
             comprasRef.document(compra.compra).set(compra)
 
         } catch (e: Exception) {
@@ -173,11 +165,7 @@ class ListaCompraActivity : AppCompatActivity() {
                 btnDelete.setOnClickListener {
                     listaAll.removeAt(pos)
                     ComprasRef.document(item.compra).delete()
-                    //setUpRecyclerView(listaAll)
-                    //notifyItemRemoved(lista.indexOf(item))
-                    //notifyItemRangeChanged(lista.indexOf(item),lista.size)
                     bajaCompra()
-
                     listaDeleted.add(0,item)
                     /*Snackbar.make(
                         mRecyclerView2,
@@ -193,7 +181,6 @@ class ListaCompraActivity : AppCompatActivity() {
                 }
                 itemView.setOnClickListener {
                     onClick(item)
-                    //it.setBackgroundResource(R.color.amarillo)
                 }
             }
         }
@@ -222,8 +209,8 @@ class ListaCompraActivity : AppCompatActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_compra_layout, menu)
-        val item: MenuItem = menu!!.findItem(R.id.nav_deleteAll)
-        val navDeleteAll = menu.findItem(R.id.nav_deleteAll)
+        //val item: MenuItem = menu!!.findItem(R.id.nav_deleteAll)
+        val navDeleteAll = menu!!.findItem(R.id.nav_deleteAll)
         val navDeleteSelected = menu.findItem(R.id.nav_deleteSelected)
         val navUndo = menu.findItem(R.id.nav_undo)
 
@@ -233,7 +220,6 @@ class ListaCompraActivity : AppCompatActivity() {
                 listaAll.add(listaDeleted[0])
                 subeCompra(listaDeleted[0])
                 listaDeleted.removeAt(0)
-                //setUpRecyclerView(listaAll)
                 bajaCompra()
             }
             if (deletedAll) {
@@ -242,7 +228,6 @@ class ListaCompraActivity : AppCompatActivity() {
                     subeCompra(listaDeletedAll[i])
                 }
                 listaDeletedAll.clear()
-                //setUpRecyclerView(listaAll)
                 bajaCompra()
                 deletedAll = false
                 accion = true
@@ -253,7 +238,6 @@ class ListaCompraActivity : AppCompatActivity() {
                     subeCompra(listaDeletedSelected[i])
                 }
                 listaDeletedSelected.clear()
-                //setUpRecyclerView(listaAll)
                 bajaCompra()
                 deletedSelected = false
             }

@@ -25,7 +25,6 @@ import java.time.LocalDate
 
 class CalendarioComidasActivity : AppCompatActivity() {
 
-    var calendarioComida = mutableListOf<Dia>()
     var semana0 = mutableListOf<Dia>()
     var semana1 = mutableListOf<Dia>()
     var semana2 = mutableListOf<Dia>()
@@ -76,7 +75,6 @@ class CalendarioComidasActivity : AppCompatActivity() {
             intent.putExtra("dia", it.dia)
             intent.putExtra("comida", it.comida)
             intent.putExtra("cena", it.cena)
-            //intent.putExtra("pos",listado.indexOf(it))
             startActivity(intent)
             finish()
         }
@@ -102,8 +100,7 @@ class CalendarioComidasActivity : AppCompatActivity() {
                 val documento = calendarioRef.document(doc).get().await()
                 val comida = documento?.get("comida").toString()
                 val cena = documento?.get("cena").toString()
-                //val fecha = documento?.get("fecha").toString()
-                //val dia = documento?.get("dia").toString()
+
                 when {
                     i < 7 -> {
                         val dia = semana[i]
@@ -168,7 +165,6 @@ class CalendarioComidasActivity : AppCompatActivity() {
 
         var lista: List<Dia> = ArrayList()
         lateinit var context: Context
-        private val calendarioRef = Firebase.firestore.collection("Calendario")
 
         inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
             val tvDia = view.findViewById(R.id.tvDia) as TextView

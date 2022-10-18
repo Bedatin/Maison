@@ -19,12 +19,6 @@ import java.time.LocalDate
 
 class CalendarioInSite : AppCompatActivity() {
 
-    var calendarioComida = mutableListOf<Dia>()
-    var semana0 = mutableListOf<Dia>()
-    var semana1 = mutableListOf<Dia>()
-    var semana2 = mutableListOf<Dia>()
-    var semana3 = mutableListOf<Dia>()
-
     var calendarioComidaBajado = listOf<Dia>()
     var lunes = LocalDate.now()
 
@@ -65,7 +59,6 @@ class CalendarioInSite : AppCompatActivity() {
         semanaAMostrar.clear()
         bajaCalendario()
 
-        //habilitarBotones()
         llenarArrays()
         btnGuardar.setOnClickListener {
             for (i in 0..6) {
@@ -88,7 +81,6 @@ class CalendarioInSite : AppCompatActivity() {
                     )
                 )
             }
-
         }
     }
 
@@ -168,18 +160,12 @@ class CalendarioInSite : AppCompatActivity() {
                 documento = calendarioRef.document(doc).get().await()
                 comida = documento?.get("comida").toString()
                 cena = documento?.get("cena").toString()
-                val fecha = documento?.get("fecha").toString()
-                val dia = documento?.get("dia").toString()
+
                 when {
                     i < 7 -> {
-                        //val dia = semana[i]
-                        //val nuevoDia = Dia(doc, dia, comida, cena)
-                        //diasBajados.add(nuevoDia)
-                        //semana0.add(nuevoDia)
                         withContext(Dispatchers.Main) {
                             val num1 = doc.substring(8, 10)
                             val num2 = doc.substring(5, 7)
-                            //tvDia.text = "${semana[i]} $num1/$num2"
                             listatvDias[i].text = "${semana[i]} $num1/$num2"
                             listaetComidas[i].text = comida
                             listaetCenas[i].text = cena
@@ -189,15 +175,10 @@ class CalendarioInSite : AppCompatActivity() {
                         withContext(Dispatchers.Main) {
                             val num1 = doc.substring(8, 10)
                             val num2 = doc.substring(5, 7)
-                            //tvDia.text = "${semana[i-7]} $num1/$num2"
                             listatvDias[i].text = "${semana[i - 7]} $num1/$num2"
                             listaetComidas[i].text = comida
                             listaetCenas[i].text = cena
                         }
-                        /*val dia = semana[i-7]
-                        val nuevoDia = Dia(doc, dia, comida, cena)
-                        diasBajados.add(nuevoDia)
-                        semana1.add(nuevoDia)*/
                     }
                     else -> {
                         Toast.makeText(
@@ -212,14 +193,6 @@ class CalendarioInSite : AppCompatActivity() {
                     Toast.makeText(this@CalendarioInSite, e.message, Toast.LENGTH_LONG).show()
                 }
             }
-            /*withContext(Dispatchers.Main) {
-                val num1 = doc.substring(8, 10)
-                val num2 = doc.substring(5, 7)
-                tvDia.text = "${listado.dia} $num1/$num2"
-                listatvDias[i].text = doc
-                listaetComidas[i].text = comida
-                listaetCenas[i].text = cena
-            }*/
         }
         habilitarBotones()
         calendarioComidaBajado = diasBajados.sortedBy { it.fecha }
@@ -229,8 +202,6 @@ class CalendarioInSite : AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_calendario_layout, menu)
         val item: MenuItem = menu!!.findItem(R.id.nav_actualizar)
-        val navActualizar = menu.findItem(R.id.nav_actualizar)
-
 
         item.setOnMenuItemClickListener {
             habilitarBotones()
